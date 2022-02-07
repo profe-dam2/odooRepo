@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "proyectos",
+    'name': "Proyectos empleados",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        En este modulo podemos asignar a diferentes empleados
+        """,
 
     'description': """
-        Long description of module's purpose
+        Este modulo fue desarrollado para gestionar los proyectos
     """,
 
     'author': "Rafa SaliNipon",
