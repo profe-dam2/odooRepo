@@ -42,7 +42,7 @@ class empleado(models.Model):
     telefonoEmpleado = fields.Char(string='Telefono')
 
     #Relacion de tablas
-    departamento_id = fields.Many2One('proyectos.departamento', string='Empleados')
+    departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
     proyecto_ids = fields.Many2many('proyectos.proyecto', string='Proyectos')
 
 
