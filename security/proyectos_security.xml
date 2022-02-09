@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <odoo>
+<data>
 
     <!--Definir categoria de seguridad para el modulo-->
     <record model="ir.module.category" id="proyectos.module_category_proyectos">
@@ -26,4 +27,5 @@
         <field name="comment">role2</field>
     </record>
 
+</data>
 </odoo>
