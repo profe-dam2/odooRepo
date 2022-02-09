@@ -67,6 +67,7 @@
           <field name="nombreEmpleado"/>
           <field name="direccionEmpleado"/>
           <field name="telefonoEmpleado"/>
+          <field name="edad"/>
         </tree>
       </field>
     </record>
