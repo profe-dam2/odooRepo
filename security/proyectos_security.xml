@@ -4,7 +4,7 @@
     <record model="ir.module.category" id="proyectos.module_category_proyectos">
         <field name="name">Proyectos</field>
         <field name="description">Gestion y asignacion de proyectos</field>
-        <field name="sequence">100</field>
+
     </record>
 
     <record model="res.groups" id="group_proyectos_role1">
