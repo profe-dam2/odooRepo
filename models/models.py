@@ -57,8 +57,8 @@ class empleado(models.Model):
     @api.constrains('dniEmpleado')
     def _checkDNI(self):
         for empleado in self:
-            if len(empleado.dniEmpleado) != 9:
-                raise ValidationError("El DNI debe tener 9 caracteres")
+            if (len(empleado.dniEmpleado) != 9):
+                raise exceptions.ValidationError("El DNI debe tener 9 caracteres")
 
 
 class proyecto(models.Model):
