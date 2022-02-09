@@ -14,7 +14,7 @@
          </record>
 
          <record id="empleado1" model="proyectos.empleado">
-         <field name="dniEmpleado">1234</field>
+         <field name="dniEmpleado">123456789</field>
          <field name="nombreEmpleado">Rafa</field>
          <field name="direccionEmpleado">C/Toledo 12</field>
          <field name="telefonoEmpleado">925456662</field>
