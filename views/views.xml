@@ -57,7 +57,7 @@
               action="proyectos.action_server"/>
 -->
     <!-- VISTA EMPLEADOS -->
-    <record model="ir.ui.view" id="proyectos.empleado_list_view">
+    <record model="ir.ui.view" id="proyectos_empleado_list_view">
       <field name="name">proyectos.empleado.view.tree</field>
       <field name="model">proyectos.empleado</field>
       <field name="arch" type="xml">
