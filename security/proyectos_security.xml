@@ -11,7 +11,7 @@
 
     <record model="res.groups" id="group_proyectos_role1">
         <field name="name">role1</field>
-        <field name="category_id" ref="proyectos.module_category_proyectos"></field>
+        <field name="category_id" ref="proyectos.module_category_proyectos"/>
         <field name="comment">role1</field>
 
         <!--Indicamos que los usuarios del grupo role1 tambien pertenecen a role2-->
@@ -22,8 +22,8 @@
 
     <record model="res.groups" id="group_proyectos_role2">
         <field name="name">role2</field>
-        <field name="category_id" ref="proyectos.module_category_proyectos"></field>
+        <field name="category_id" ref="proyectos.module_category_proyectos"/>
         <field name="comment">role2</field>
     </record>
-    
+
 </odoo>
