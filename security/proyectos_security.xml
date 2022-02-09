@@ -1,0 +1,29 @@
+<xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+        <!--Definir categoria de seguridad para el modulo-->
+        <record model="ir.module.category" id="proyectos.module_category_proyectos">
+            <field name="name">Proyectos</field>
+            <field name="description">Gestion y asignacion de proyectos</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record model="res.groups" id="group_proyectos_role1">
+            <field name="name">role1</field>
+            <field name="category_id" ref="proyectos.module_category_proyectos"></field>
+            <field name="comment">role1</field>
+            <!--Indicamos que los usuarios del grupo role1 tambien pertenecen a role2-->
+            <field name="implied_ids" eval="[(4, ref('group_proyectos_role2'))]"/>
+            <field nane="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        
+        <record model="res.groups" id="group_proyectos_role2">
+            <field name="name">role2</field>
+            <field name="category_id" ref="proyectos.module_category_proyectos"></field>
+            <field name="comment">role2</field>
+        </record>
+
+    </data>
+</odoo>

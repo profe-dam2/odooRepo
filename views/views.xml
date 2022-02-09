@@ -16,7 +16,7 @@
 -->
 
     <!-- actions opening views on models -->
-<!--
+<!-- 
     <record model="ir.actions.act_window" id="proyectos.action_window">
       <field name="name">proyectos window</field>
       <field name="res_model">proyectos.proyectos</field>
@@ -56,7 +56,8 @@
     <menuitem name="Server to list" id="proyectos" parent="proyectos.menu_2"
               action="proyectos.action_server"/>
 -->
-    <!-- VISTA EMPLEADOS -->
+
+  <!-- VISTA EMPLEADOS -->
     <record model="ir.ui.view" id="proyectos.empleado_list_view">
       <field name="name">proyectos.empleado.view.tree</field>
       <field name="model">proyectos.empleado</field>
@@ -64,7 +65,6 @@
         <tree>
           <field name="dniEmpleado"/>
           <field name="nombreEmpleado"/>
-          <field name="fechaNacimiento"/>
           <field name="direccionEmpleado"/>
           <field name="telefonoEmpleado"/>
         </tree>
@@ -82,8 +82,7 @@
       </field>
     </record>
 
-
-    <!-- VISTA PROYECTO -->
+  <!-- VISTA PROYECTO -->
     <record model="ir.ui.view" id="proyectos.proyecto_list_view">
       <field name="name">proyectos.proyecto.view.tree</field>
       <field name="model">proyectos.proyecto</field>
@@ -98,6 +97,8 @@
       </field>
     </record>
 
+
+    <!-- DEFINICION DE MENUS-->
     <record model="ir.actions.act_window" id="proyectos.empleado_action_window">
       <field name="name">Empleados</field>
       <field name="res_model">proyectos.empleado</field>
@@ -115,12 +116,13 @@
       <field name="res_model">proyectos.proyecto</field>
       <field name="view_mode">tree,form</field>
     </record>
-  
-    <menuitem name="Proyectos" id="proyectos.menu_root"/>
 
-    <menuitem name="Empleados" id="proyectos.empleado_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
+    <menuitem name="proyectos" id="proyectos.menu_root"/>
+
+    <menuitem name="Empleados" id="proyectos.empleados_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
     <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos.departamento_action_window"/>
     <menuitem name="Proyectos" id="proyectos.proyecto_menu" parent="proyectos.menu_root" action="proyectos.proyecto_action_window"/>
+    
 
   </data>
 </odoo>

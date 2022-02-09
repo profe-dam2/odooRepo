@@ -38,11 +38,11 @@ class empleado(models.Model):
     dniEmpleado = fields.Char(string='DNI', required=True)
     nombreEmpleado = fields.Char(string='Nombre y apellidos', required=True)
     fechaNacimiento = fields.Date(string='Fecha Nacimiento', required=True, default = fields.date.today())
-    direccionEmpleado = fields.Char(string='Direccon')
+    direccionEmpleado = fields.Char(string='Direccion')
     telefonoEmpleado = fields.Char(string='Telefono')
 
     #Relacion de tablas
-    departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
+    departamento_id = fields.Many2one('proyectos.departamento', string='Departamentos')
     proyecto_ids = fields.Many2many('proyectos.proyecto', string='Proyectos')
 
 
@@ -52,7 +52,7 @@ class proyecto(models.Model):
 
      #Atributos
      nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
-     tipoProyecto = fields.Selection(string='Tipo de poryecto', selection=[('f','Front-End'),('b','Back-End')], help='Tipo de proyecto al que se esta destinando' )
+     tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], help='Tipo de proyecto al que se esta destinando' )
      descripcionProyecto = fields.Text(string='Descripcion del proyecto')
      fechaInicio = fields.Date(string='Fecha de inicio', required=True)
      fechaFin = fields.Date(string='Fecha de fin', required=True)
