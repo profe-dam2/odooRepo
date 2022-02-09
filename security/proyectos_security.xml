@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <odoo>
-    <record model="ir.module.category" id="proyectos.module_category_proyectos">
+    <record model="ir.module.category_id" id="proyectos.module_category_proyectos">
         <field name="name">Proyectos</field>
         <field name="description">Gestion y asignacion de proyectos</field>
-
     </record>
 
     <record model="res.groups" id="group_proyectos_role1">
