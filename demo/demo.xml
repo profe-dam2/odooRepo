@@ -47,7 +47,7 @@
         <field name="telefonoEmpleado">925456662</field>
       </record>
 
-      <record id="proyecto1" model="proyectos.proyecto1">
+      <record id="proyecto1" model="proyectos.proyecto">
         <field name="nombreProyecto">Proyecto Windows</field>
         <field name="tipoProyecto">b</field>
         <field name="descripcionProyecto">Proyecto dedicado a corregir errores en bbdd</field>
