@@ -37,7 +37,7 @@
         <field name="fechaNacimiento">1990-01-01</field>
         <field name="direccionEmpleado">C/Toledo 12</field>
         <field name="telefonoEmpleado">925456662</field>
-        <field name="empleado_id" ref="departamento1"/>
+        <field name="departamento_id" ref="departamento1"/>
       </record>
 
       <record id="empleado1" model="proyectos.empleado">
