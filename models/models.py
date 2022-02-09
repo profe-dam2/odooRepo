@@ -21,6 +21,7 @@
 from odoo import models, fields, api
 from dateutil.relativedelta import *
 from datetime import date
+from odoo.exceptions import ValidationError
 
 class departamento(models.Model):
     _name = 'proyectos.departamento'
@@ -52,6 +53,12 @@ class empleado(models.Model):
         hoy = date.today()
         for empleado in self:
             empleado.edad = relativedelta(hoy, empleado.fechaNacimiento).years
+
+    @api.constrains('dniEmpleado')
+    def _checkDNI(self):
+        for empleado in self:
+            if len(empleado.dniEmpleado) > 9:
+                raise ValidationEroor("El DNI no puede ser mayor a 9 caracteres")
 
 
 class proyecto(models.Model):
