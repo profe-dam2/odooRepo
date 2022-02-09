@@ -51,7 +51,7 @@ class empleado(models.Model):
     def _getEdad(self):
         hoy = date.today()
         for empleado in self:
-            empleado.edad = relativedelta(hoy, empleado.edad).years
+            empleado.edad = relativedelta(hoy, empleado.fechaNacimiento).years
 
 
 class proyecto(models.Model):
