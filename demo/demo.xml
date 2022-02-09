@@ -26,5 +26,35 @@
             <field name="value">40</field>
           </record>
 -->
+
+      <record id="departamento1" model="proyectos.departamento">
+        <field name="nombreDpto">Ventas</field>
+      </record>
+
+      <record id="empleado1" model="proyectos.empleado">
+        <field name="dniEmpleado">1234</field>
+        <field name="nombreEmpleado">Rafa</field>
+        <field name="fechaNacimiento">1990-01-01</field>
+        <field name="direccionEmpleado">C/Toledo 12</field>
+        <field name="telefonoEmpleado">925456662</field>
+        <field name="empleado_id" ref="departamento1"/>
+      </record>
+
+      <record id="empleado1" model="proyectos.empleado">
+        <field name="dniEmpleado">1234</field>
+        <field name="nombreEmpleado">Rafa</field>
+        <field name="direccionEmpleado">C/Toledo 12</field>
+        <field name="telefonoEmpleado">925456662</field>
+      </record>
+
+      <record id="proyecto1" model="proyectos.proyecto1">
+        <field name="nombreProyecto">Proyecto Windows</field>
+        <field name="tipoProyecto">b</field>
+        <field name="descripcionProyecto">Proyecto dedicado a corregir errores en bbdd</field>
+        <field name="fechaInicio">2022-03-01</field>
+        <field name="fechaFin">2022-04-01</field>
+        <field name="empleado_ids" eval="[(6, 0, [ref('empleado1)])]" />
+      </record>
+
     </data>
 </odoo>

@@ -65,6 +65,7 @@
         <tree>
           <field name="dniEmpleado"/>
           <field name="nombreEmpleado"/>
+          <field name="fechaNacimiento"/>
           <field name="direccionEmpleado"/>
           <field name="telefonoEmpleado"/>
           <field name="edad"/>
