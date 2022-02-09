@@ -72,7 +72,7 @@
     </record>
 
     <!-- VISTA DEPARTAMENTO -->
-    <record model="ir.ui.view" id="proyectos.departamento_list_view">
+    <record model="ir.ui.view" id="proyectos_departamento_list_view">
       <field name="name">proyectos.departamento.view.tree</field>
       <field name="model">proyectos.departamento</field>
       <field name="arch" type="xml">
@@ -84,7 +84,7 @@
 
 
     <!-- VISTA PROYECTO -->
-    <record model="ir.ui.view" id="proyectos.proyecto_list_view">
+    <record model="ir.ui.view" id="proyectos_proyecto_list_view">
       <field name="name">proyectos.proyecto.view.tree</field>
       <field name="model">proyectos.proyecto</field>
       <field name="arch" type="xml">
