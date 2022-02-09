@@ -98,19 +98,19 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="proyectos.empleado_action_window">
+    <record model="ir.actions.act_window" id="proyectos_empleado_action_window">
       <field name="name">Empleados</field>
       <field name="res_model">proyectos.empleado</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="proyectos.departamento_action_window">
+    <record model="ir.actions.act_window" id="proyectos_departamento_action_window">
       <field name="name">Departamentos</field>
       <field name="res_model">proyectos.departamento</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="proyectos.proyecto_action_window">
+    <record model="ir.actions.act_window" id="proyectos_proyecto_action_window">
       <field name="name">Proyectos</field>
       <field name="res_model">proyectos.proyecto</field>
       <field name="view_mode">tree,form</field>
@@ -118,9 +118,9 @@
   
     <menuitem name="Proyectos" id="proyectos.menu_root"/>
 
-    <menuitem name="Empleados" id="proyectos.empleado_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
-    <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos.departamento_action_window"/>
-    <menuitem name="Proyectos" id="proyectos.proyecto_menu" parent="proyectos.menu_root" action="proyectos.proyecto_action_window"/>
+    <menuitem name="Empleados" id="proyectos.empleado_menu" parent="proyectos.menu_root" action="proyectos_empleado_action_window"/>
+    <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos_departamento_action_window"/>
+    <menuitem name="Proyectos" id="proyectos.proyecto_menu" parent="proyectos.menu_root" action="proyectos_proyecto_action_window"/>
 
   </data>
 </odoo>
