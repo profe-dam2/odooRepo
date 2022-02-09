@@ -18,10 +18,10 @@
 #             record.value2 = float(record.value) / 100
 
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 from dateutil.relativedelta import *
 from datetime import date
-from odoo.exceptions import ValidationError
+
 
 class departamento(models.Model):
     _name = 'proyectos.departamento'
