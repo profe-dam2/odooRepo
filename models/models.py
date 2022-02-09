@@ -59,7 +59,7 @@ class empleado(models.Model):
         for empleado in self:
             if (len(empleado.dniEmpleado) > 9):
                 raise exceptions.ValidationError("El DNI no puede tener mas 9 caracteres")
-            else:
+            if (len(empleado.dniEmpleado) < 9):
                 raise exceptions.ValidationError("El DNI no puede tener menos 9 caracteres")
 
 
