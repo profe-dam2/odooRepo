@@ -76,7 +76,7 @@ class proyecto(models.Model):
      #Relacion entre tablas
      empleado_ids = fields.Many2many('proyectos.empleado', string='Empleados')
      
-     @api.depends('fechaInicio')
+     @api.constrains('fechaInicio')
      def _checkFechaInicio(self):
         hoy = date.today()
         for proyecto in self:
