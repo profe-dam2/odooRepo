@@ -18,7 +18,9 @@
 #             record.value2 = float(record.value) / 100
 
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
+from datetime import date
+from dateutil.relativedelta import *
 
 class departamento(models.Model):
     _name = 'proyectos.departamento'
@@ -40,6 +42,21 @@ class empleado(models.Model):
     fechaNacimiento = fields.Date(string='Fecha Nacimiento', required=True, default = fields.date.today())
     direccionEmpleado = fields.Char(string='Direccon')
     telefonoEmpleado = fields.Char(string='Telefono')
+    edad = fields.Integer(string='Edad', compute='_getEdad')
+
+    @api.depends('fechaNacimiento')
+    def _getEdad(self):
+        hoy = date.today()
+        for empleado in self:
+            empleado.edad = relativedelta(hoy, empleado.fechaNacimiento).years
+
+    @api.constrains('dniEmpleado')
+    def _checkDNI(self):
+        for empleado in self:
+            if (len(empleado.dniEmpleado) > 9 ):
+                raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
+            if (len(empleado.dniEmpleado) < 9):
+                raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
 
     #Relacion de tablas
     departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
@@ -56,5 +73,16 @@ class proyecto(models.Model):
      descripcionProyecto = fields.Text(string='Descripcion del proyecto')
      fechaInicio = fields.Date(string='Fecha de inicio', required=True)
      fechaFin = fields.Date(string='Fecha de fin', required=True)
+     
+     @api.constrains('fechaInicio')
+     def _checkFechaInicio(self):
+         hoy = date.today()
+         for proyecto in self:
+             proyecto.fechaInicio
+             dias = relativedelta(hoy, proyecto.fechaInicio).days
+             if (dias < 0):
+                 raise exceptions.ValidationError("La fecha no puede ser anterior a hoy")
+
+     
      #Relacion entre tablas
      empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')

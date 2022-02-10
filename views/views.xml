@@ -58,7 +58,7 @@
 -->
     <!-- VISTA EMPLEADOS -->
     <record model="ir.ui.view" id="proyectos.empleado_list_view">
-      <field name="name">proyectos.empleado.view.tree</field>
+      <field name="name">proyectos_empleado.view.tree</field>
       <field name="model">proyectos.empleado</field>
       <field name="arch" type="xml">
         <tree>
@@ -73,7 +73,7 @@
 
     <!-- VISTA DEPARTAMENTO -->
     <record model="ir.ui.view" id="proyectos.departamento_list_view">
-      <field name="name">proyectos.departamento.view.tree</field>
+      <field name="name">proyectos_departamento.view.tree</field>
       <field name="model">proyectos.departamento</field>
       <field name="arch" type="xml">
         <tree>
@@ -85,7 +85,7 @@
 
     <!-- VISTA PROYECTO -->
     <record model="ir.ui.view" id="proyectos.proyecto_list_view">
-      <field name="name">proyectos.proyecto.view.tree</field>
+      <field name="name">proyectos_proyecto.view.tree</field>
       <field name="model">proyectos.proyecto</field>
       <field name="arch" type="xml">
         <tree>
