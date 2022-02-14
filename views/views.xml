@@ -95,6 +95,7 @@
           <field name="descripcionProyecto"/>
           <field name="fechaInicio"/>
           <field name="fechaFin"/>
+          <field name="dias"/>
         </tree>
       </field>
     </record>
