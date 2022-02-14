@@ -64,31 +64,31 @@ class empleado(models.Model):
 
 
 class proyecto(models.Model):
-     _name = 'proyectos.proyecto'
-     _description = 'Define los atributos de un proyecto'
+    _name = 'proyectos.proyecto'
+    _description = 'Define los atributos de un proyecto'
 
-     #Atributos
-     nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
-     tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], help='Tipo de proyecto al que se esta destinando' )
-     descripcionProyecto = fields.Text(string='Descripcion del proyecto')
-     fechaInicio = fields.Date(string='Fecha de inicio', required=True)
-     fechaFin = fields.Date(string='Fecha de fin', required=True)
-     dias = fields.Integer(string='Dias')
-     
-     #Relacion entre tablas
-     empleado_ids = fields.Many2many('proyectos.empleado', string='Empleados')
-     
-     @api.constrains('fechaFin')
-    def _checkFechaFin(self):
-        for proyecto in self:
-            if relativedelta(proyecto.fechaFin, proyecto.fechaInicio).days > 0 :
-                raise exception.ValidationError("La fecha de fin no puede ser anterior a la de comienzo")
+    #Atributos
+    nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
+    tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f','Front-End'),('b','Back-End')], help='Tipo de proyecto al que se esta destinando' )
+    descripcionProyecto = fields.Text(string='Descripcion del proyecto')
+    fechaInicio = fields.Date(string='Fecha de inicio', required=True)
+    fechaFin = fields.Date(string='Fecha de fin', required=True)
+    dias = fields.Integer(string='Dias')
     
-     @api.constrains('fechaInicio')
-     def _checkFechaInicio(self):
-        hoy = date.today()
-        for proyecto in self:
-            proyecto.fechaInicio
-            proyecto.dias = relativedelta(hoy, proyecto.fechaInicio).days
-            if (proyecto.dias > 0):
-                raise exceptions.ValidationError("La fecha no puede ser anterior a hoy")
+    #Relacion entre tablas
+    empleado_ids = fields.Many2many('proyectos.empleado', string='Empleados')
+    
+    @api.constrains('fechaFin')
+    def _checkFechaFin(self):
+    for proyecto in self:
+        if relativedelta(proyecto.fechaFin, proyecto.fechaInicio).days > 0 :
+            raise exception.ValidationError("La fecha de fin no puede ser anterior a la de comienzo")
+
+    @api.constrains('fechaInicio')
+    def _checkFechaInicio(self):
+    hoy = date.today()
+    for proyecto in self:
+        proyecto.fechaInicio
+        proyecto.dias = relativedelta(hoy, proyecto.fechaInicio).days
+        if (proyecto.dias > 0):
+            raise exceptions.ValidationError("La fecha no puede ser anterior a hoy")
