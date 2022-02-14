@@ -73,6 +73,7 @@ class proyecto(models.Model):
      descripcionProyecto = fields.Text(string='Descripcion del proyecto')
      fechaInicio = fields.Date(string='Fecha de inicio', required=True)
      fechaFin = fields.Date(string='Fecha de fin', required=True)
+     dias = fields.Integer(string='Dias')
      #Relacion entre tablas
      empleado_ids = fields.Many2many('proyectos.empleado', string='Empleados')
      
